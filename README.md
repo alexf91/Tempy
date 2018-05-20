@@ -24,8 +24,7 @@ parser.add_argument('somevar', type=sometype)
 ```
 
 The parser variable is required and is used to pass arguments to the template.
-In the template, the variables are accessible through the dictionary variable
-`arguments`.
+These variables are accessible in the template.
 
 Filenames can also be set through arguments by using a Python format string
 as the filename during template definition.
