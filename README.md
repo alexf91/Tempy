@@ -28,3 +28,15 @@ These variables are accessible in the template.
 
 Filenames can also be set through arguments by using a Python format string
 as the filename during template definition.
+
+## Usage
+
+There are several examples for templates in the `examples` directory.
+
+Files can be created from templates with the `tempy apply <template>` command.
+
+Example:
+```
+tempy apply -o /tmp/myproject c-project --name bar
+```
+This creates a C project with a Makefile and a file with the `main()` function.
