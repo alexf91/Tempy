@@ -141,10 +141,11 @@ def command_apply(args):
         return 1
 
     # Parse the template arguments
-    parser = metainfo['parser']
-    if parser is None:
-        print('Template has no parser')
-        return 1
+    if metainfo.get('parser') is not None:
+        parser = metainfo['parser']
+        targs = vars(parser.parse_args(args.args))
+    else:
+        targs = dict()
 
     try:
         os.makedirs(args.output, exist_ok=True)
@@ -154,10 +155,10 @@ def command_apply(args):
         print('Could not create directory', file=sys.stderr)
         return 1
 
-    targs = parser.parse_args(args.args)
 
+    # Render the templates and create the output files
     for name, template in templates.items():
-        fname = name.format(**vars(targs))
+        fname = name.format(**targs)
         outpath = os.path.join(args.output, fname)
         if os.path.exists(outpath):
             if args.verbose:
@@ -166,7 +167,7 @@ def command_apply(args):
             return 1
 
         try:
-            content = template.render(**vars(targs))
+            content = template.render(**targs)
             with open(outpath, 'w') as fp:
                 fp.write(content)
         except Exception as e:
