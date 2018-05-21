@@ -1,3 +1,13 @@
+<<<
+import argparse
+
+name = 'c-main'
+description = 'C file with main function'
+parser = argparse.ArgumentParser()
+parser.add_argument('--name', '-n', default='foo')
+parser.add_argument('--license', '-l', choices=('MIT', 'GPL'),
+        help='license header for the file')
+>>>
 % if license == 'MIT':
 /*
  * Copyright (c) 2018 Alexander Fasching

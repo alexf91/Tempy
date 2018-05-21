@@ -37,6 +37,7 @@ Files can be created from templates with the `tempy apply <template>` command.
 
 Example:
 ```
-tempy apply -o /tmp/myproject c-project --name bar
+tempy apply -o /tmp/myproject c-project -- --name bar
 ```
-This creates a C project with a Makefile and a file with the `main()` function.
+This creates a C project with a Makefile and a file with the `main()` function
+called `bar.c` in the current directory.
