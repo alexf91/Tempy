@@ -3,8 +3,8 @@
 from setuptools import setup
 
 setup(name='Tempy',
-    version='0.1',
-    description='Creates files or directories from templates',
+    version='1.0',
+    description='Create files or directories from templates',
     author='Alexander Fasching',
     author_email='fasching.a91@gmail.com',
     maintainer='Alexander Fasching',
