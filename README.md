@@ -23,7 +23,7 @@ parser.add_argument('somevar', type=sometype)
 ...
 ```
 
-The parser variable is required and is used to pass arguments to the template.
+The parser variable is optional and is used to pass arguments to the template.
 These variables are accessible in the template.
 
 Filenames can also be set through arguments by using a Python format string
@@ -40,4 +40,4 @@ Example:
 tempy apply -o /tmp/myproject c-project -- --name bar
 ```
 This creates a C project with a Makefile and a file with the `main()` function
-called `bar.c` in the current directory.
+called `bar.c` in the directory `/tmp/myproject`.

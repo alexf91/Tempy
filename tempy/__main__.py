@@ -39,7 +39,7 @@ def load_file_template(filepath):
     if lines[0] == '<<<\n':
         end = min([i for i, line in enumerate(lines) if line == '>>>\n'], default=None)
         if end is None:
-            raise SyntaxError('Could not find enclosing >>>')
+            raise SyntaxError('Could not find closing >>>')
 
         # Extract the variables and create the template
         metacode = ''.join(lines[1:end])
